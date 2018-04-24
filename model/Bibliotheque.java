@@ -21,9 +21,11 @@ public class Bibliotheque {
 	 * Renvoie la liste des documents de la bibliotheque.
 	 */
 	public List<Document> getDocuments() {
+		return documents;
+	}
 
 	/**
-	 * Renvoie le i ï¿½me document de la liste des documents, sï¿½il existe, 
+	 * Renvoie le i ème document de la liste des documents, s’il existe, 
 	 * ou null sinon.
 	 */
 	public Document getDocument(int i) {
@@ -32,8 +34,8 @@ public class Bibliotheque {
 	}
 	
 	/**
-	 * Si doc est non null et n'appartient pas dï¿½jï¿½ ï¿½ la liste des documents,
-	 * alors ajoute doc ï¿½ cette liste et renvoie true ;
+	 * Si doc est non null et n'appartient pas déjà à la liste des documents,
+	 * alors ajoute doc à cette liste et renvoie true ;
 	 * sinon renvoie faux.
 	 */
 	public boolean addDocument(Document doc) {
