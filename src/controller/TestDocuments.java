@@ -16,17 +16,18 @@ public class TestDocuments {
 
 		Document[] documents = {
 //			new Livre("L'archipel du Goulag", "Soljenitsyne", 250),
-//			new Roman("Rouge Brésil", "Rufin", 120, Roman.GONCOURT),
+//			new Roman("Rouge Brï¿½sil", "Rufin", 120, Roman.GONCOURT),
 //			new Revue("Le point", 03, 2014),
 //			new Roman("Le mendiant", "Wiesel", 150, Roman.MEDICIS),
 //			new Livre("La condition humaine", "Malraux", 130),
-//			new Manuel("Manuel qualité ISO 9001", "AFNOR", -1, 3)
+//			new Manuel("Manuel qualitï¿½ ISO 9001", "AFNOR", -1, 3)
 		};
 	
 		for ( Document doc : documents ) {
 			System.out.println(doc);
 		}
-		
+
+		System.out.println("coucou");
 	}
 
 }
