@@ -32,4 +32,12 @@ public abstract class Document {
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
+
+	@Override
+	public String toString() {
+		return "Document{" +
+				"numEnreg=" + numEnreg +
+				", titre='" + titre + '\'' +
+				'}';
+	}
 }

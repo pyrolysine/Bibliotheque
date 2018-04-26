@@ -29,4 +29,12 @@ public class Livre extends Document implements InterfaceAuteur {
 	public void setNbPages(int nbPages) {
 		this.nbPages = nbPages;
 	}
+
+	@Override
+	public String toString() {
+		return "Livre{" +
+				"auteur='" + auteur + '\'' +
+				", nbPages=" + nbPages +
+				'}';
+	}
 }
