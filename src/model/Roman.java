@@ -19,8 +19,18 @@ public class Roman extends Livre {
 		return prixLitteraire;
 	}
 
-	public void setPrixLitteraire(int prixLitteraire) {
-		if
+	public void setPrixLitteraire(String prixLitteraire) {
+		if(prixLitteraire == "GONCOURT"){
+			this.prixLitteraire = GONCOURT;
+		} else if (prixLitteraire == "MEDICIS"){
+			this.prixLitteraire = MEDICIS;
+		} else if (prixLitteraire == "INTERALLIE"){
+			this.prixLitteraire = INTERALLIE;
+		} else if (prixLitteraire == "PULITER"){
+			this.prixLitteraire = PULITZER;
+		} else {
+			this.prixLitteraire = 0;
+		}
 	}
 
 	@Override
