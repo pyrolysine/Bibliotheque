@@ -17,4 +17,12 @@ public class Manuel extends Livre {
 	public void setNiveau(int niveau) {
 		this.niveau = niveau;
 	}
+
+	@Override
+	public String toString() {
+		return  "Manuel{" +
+				"niveau=" + niveau +
+				'}';
+	}
+
 }

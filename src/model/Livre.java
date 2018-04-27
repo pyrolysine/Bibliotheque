@@ -31,8 +31,11 @@ public class Livre extends Document implements InterfaceAuteur {
 	}
 
 	@Override
+
 	public String toString() {
 		return "Livre{" +
+				"numEnreg=" + getNumEnreg() +
+				", titre='" + getTitre() + '\'' +
 				"auteur='" + auteur + '\'' +
 				", nbPages=" + nbPages +
 				'}';

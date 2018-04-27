@@ -24,6 +24,14 @@ public class Revue extends Document {
 		this.mois = mois;
 	}
 
+	@Override
+	public String toString() {
+		return "Revue{" +
+				"mois=" + mois +
+				", annee=" + annee +
+				'}';
+	}
+
 	public void setAnnee(int annee) {
 		this.annee = annee;
 	}
