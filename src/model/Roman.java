@@ -17,4 +17,15 @@ public class Roman extends Livre {
 	public void setPrixLitteraire(int prixLitteraire) {
 		this.prixLitteraire = prixLitteraire;
 	}
+
+	@Override
+	public String toString() {
+		return "Roman{" +
+				"numEnreg=" + getNumEnreg() +
+				", titre='" + getTitre() + '\'' +
+				"auteur='" + getAuteur() + '\'' +
+				", nbPages=" + getNbPages() +
+				"prixLitteraire=" + prixLitteraire +
+				'}';
+	}
 }

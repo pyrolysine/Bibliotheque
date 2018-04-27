@@ -8,7 +8,7 @@ public class Livre extends Document implements InterfaceAuteur {
 
 	@Override
 	public String getAuteur() {
-		return null;
+		return this.auteur;
 	}
 
 	public Livre(String titre, String auteur, int nbPages) {

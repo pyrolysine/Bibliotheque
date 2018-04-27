@@ -20,7 +20,7 @@ public class TestDocuments {
 			new Revue("Le point", 03, 2014),
 //			new Roman("Le mendiant", "Wiesel", 150, Roman.MEDICIS),
 			new Livre("La condition humaine", "Malraux", 130),
-			new Manuel("Manuel qualit� ISO 9001", "AFNOR", -1, 3)
+			new Manuel("Manuel qualite ISO 9001", "AFNOR", -1, 3)
 		};
 	
 		for ( Document doc : documents ) {
