@@ -4,6 +4,11 @@ package model;
 public class Roman extends Livre {
 
 	private int prixLitteraire;
+		public final static int GONCOURT = 1;
+		public final static int MEDICIS = 2;
+		public final static int INTERALLIE = 3;
+		public final static int PULITZER = 4;
+
 
 	public Roman(String titre, String auteur, int nbPages, int prixLitteraire) {
 		super(titre, auteur, nbPages);
@@ -15,7 +20,7 @@ public class Roman extends Livre {
 	}
 
 	public void setPrixLitteraire(int prixLitteraire) {
-		this.prixLitteraire = prixLitteraire;
+		if
 	}
 
 	@Override

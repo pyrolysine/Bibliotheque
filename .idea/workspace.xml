@@ -92,12 +92,9 @@
       <file leaf-file-name="Roman.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/Roman.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#407#408#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,12 +129,12 @@
         <option value="$PROJECT_DIR$/src/model/InterfaceAuteur.java" />
         <option value="$PROJECT_DIR$/src/model/Revue.java" />
         <option value="$PROJECT_DIR$/src/model/Manuel.java" />
-        <option value="$PROJECT_DIR$/src/model/Roman.java" />
         <option value="$PROJECT_DIR$/src/model/Livre.java" />
         <option value="$PROJECT_DIR$/src/model/Bibliotheque.java" />
         <option value="$PROJECT_DIR$/src/controller/TestDocuments.java" />
         <option value="$PROJECT_DIR$/src/model/Document.java" />
         <option value="$PROJECT_DIR$/src/view/Affichage.java" />
+        <option value="$PROJECT_DIR$/src/model/Roman.java" />
       </list>
     </option>
   </component>
@@ -438,10 +435,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-          <folding>
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -511,14 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/InterfaceAuteur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Livre.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -566,14 +552,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/InterfaceAuteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Roman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
