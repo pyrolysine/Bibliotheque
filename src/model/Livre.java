@@ -40,4 +40,16 @@ public class Livre extends Document implements InterfaceAuteur {
 				", nbPages=" + nbPages +
 				'}';
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		if (!super.equals(o)) return false;
+
+		Livre livre = (Livre) o;
+
+		if (nbPages != livre.nbPages) return false;
+		return auteur != null ? auteur.equals(livre.auteur) : livre.auteur == null;
+	}
 }

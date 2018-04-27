@@ -29,4 +29,8 @@ public class Affichage {
             System.out.println(auteur);
         }
     }
+
+    public ArrayList<Document> triParTitre(ArrayList<Document> documents){
+        return documents;
+    }
 }

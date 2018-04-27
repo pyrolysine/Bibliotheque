@@ -10,26 +10,26 @@ public class Roman extends Livre {
 		public final static int PULITZER = 4;
 
 
-	public Roman(String titre, String auteur, int nbPages, int prixLitteraire) {
+	public Roman(String titre, String auteur, int nbPages, String prixLitteraire) {
 		super(titre, auteur, nbPages);
-		this.prixLitteraire = prixLitteraire;
+		this.prixLitteraire = setPrixLitteraire(prixLitteraire);
 	}
 
 	public int getPrixLitteraire() {
 		return prixLitteraire;
 	}
 
-	public void setPrixLitteraire(String prixLitteraire) {
+	public int setPrixLitteraire(String prixLitteraire) {
 		if(prixLitteraire == "GONCOURT"){
-			this.prixLitteraire = GONCOURT;
+			return GONCOURT;
 		} else if (prixLitteraire == "MEDICIS"){
-			this.prixLitteraire = MEDICIS;
+			return MEDICIS;
 		} else if (prixLitteraire == "INTERALLIE"){
-			this.prixLitteraire = INTERALLIE;
+			return INTERALLIE;
 		} else if (prixLitteraire == "PULITER"){
-			this.prixLitteraire = PULITZER;
+			return PULITZER;
 		} else {
-			this.prixLitteraire = 0;
+			return 0;
 		}
 	}
 
@@ -42,5 +42,21 @@ public class Roman extends Livre {
 				", nbPages=" + getNbPages() +
 				"prixLitteraire=" + prixLitteraire +
 				'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		if (!super.equals(o)) return false;
+
+		Roman roman = (Roman) o;
+
+		return prixLitteraire == roman.prixLitteraire;
+	}
+
+	@Override
+	public int hashCode() {
+		return prixLitteraire;
 	}
 }

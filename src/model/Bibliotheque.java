@@ -2,6 +2,7 @@ package model;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -10,15 +11,22 @@ public class Bibliotheque {
 	// Liste des documents de la bibliotheque
 	private ArrayList<Document> documents;
 
+	public Bibliotheque(ArrayList<Document> documents){
+		this.documents = documents;
+	}
 	public Bibliotheque() {
 		this.documents = new ArrayList<Document>(){{}};
-		throw new RuntimeException("Bibliotheque() not yet implemented"); 
 	}
-	
+
+
+	public void setDocuments(ArrayList<Document> documents) {
+		this.documents = documents;
+	}
+
 	/**
 	 * Renvoie la liste des documents de la bibliotheque.
 	 */
-	public List<Document> getDocuments() {
+	public ArrayList<Document> getDocuments() {
 		return documents;
 	}
 
@@ -77,5 +85,8 @@ public class Bibliotheque {
 	@Override
 	public String toString() {
 		return "Bibliotheque de " + documents.size() + " documents";
-	}	
+	}
+
+
+
 }

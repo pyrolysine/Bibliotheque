@@ -1,5 +1,7 @@
 package model;
 import java.lang.String;
+import java.util.Comparator;
+
 // TO DO ...
 public abstract class Document {
 
@@ -40,4 +42,16 @@ public abstract class Document {
 				", titre='" + titre + '\'' +
 				'}';
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Document document = (Document) o;
+
+		if (numEnreg != document.numEnreg) return false;
+		return titre.equals(document.titre);
+	}
+
 }
