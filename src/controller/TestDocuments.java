@@ -27,7 +27,7 @@ public class TestDocuments {
 			System.out.println(doc);
 		}
 
-		System.out.println("coucou");
+		System.out.println(documents.getClass() );
 	}
 
 }

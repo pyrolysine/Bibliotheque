@@ -1,19 +1,17 @@
 package model;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class Bibliotheque {
 
 	// Liste des documents de la bibliotheque
-	private List<Document> documents;
+	private ArrayList<Document> documents;
 
-	/**
-	 * Constructeur d'une bibliotheque dont la liste de documents est vide.
-	 */
 	public Bibliotheque() {
-		// TO DO ... ( "vide" ne veut pas dire null ! )
+		this.documents = new ArrayList<Document>(){{}};
 		throw new RuntimeException("Bibliotheque() not yet implemented"); 
 	}
 	
@@ -29,8 +27,15 @@ public class Bibliotheque {
 	 * ou null sinon.
 	 */
 	public Document getDocument(int i) {
-		// TO DO ...
-		throw new RuntimeException("getDocument() not yet implemented"); 
+		try {
+			if (this.documents.get(i) != null) {
+				return this.documents.get(i);
+			} else {
+				return null;
+			}
+		} catch (RuntimeException re){
+			throw new RuntimeException("getDocument() not yet implemented");
+		}
 	}
 	
 	/**
@@ -39,8 +44,17 @@ public class Bibliotheque {
 	 * sinon renvoie faux.
 	 */
 	public boolean addDocument(Document doc) {
-		// TO DO ...
-		throw new RuntimeException("addDocument() not yet implemented"); 
+		try {
+			if (!this.documents.contains(doc)){
+				this.documents.add(doc);
+				return true;
+			} else {
+				System.out.println("ce document est deja dans la liste");
+				return false;
+			}
+		} catch (RuntimeException re) {
+			throw new RuntimeException("addDocument() not yet implemented");
+		}
 	}
 	
 	/**
@@ -48,8 +62,16 @@ public class Bibliotheque {
 	 * sinon renvoie false.
 	 */
 	public boolean removeDocument(Document doc) {
-		// TO DO ...
-		throw new RuntimeException("removeDocument() not yet implemented"); 
+		try {
+			if (this.documents.contains(doc)){
+				this.documents.remove(this.documents.indexOf(doc));
+				return true;
+			} else {
+				return false;
+			}
+		}catch (RuntimeException re){
+			throw new RuntimeException("removeDocument() not yet implemented");
+		}
 	}
 
 	@Override
