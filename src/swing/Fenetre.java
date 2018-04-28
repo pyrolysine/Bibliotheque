@@ -17,6 +17,7 @@ public class Fenetre extends JFrame {
 
     public int width,height;
     public Bibliotheque bibliotheque = lectureDocument2("./src/Bibliotheque_test.csv");
+    String tampon = new String();
 
 
     public Fenetre(){
@@ -75,6 +76,7 @@ public class Fenetre extends JFrame {
             case "AffichageBibli":getContentPane().add(AffichageBibli()); break;
             case "AffichageAuteurs":getContentPane().add(AffichageAuteurs(bibliotheque.afficherAuteur(bibliotheque.getDocuments()))); break;
             case "TrierParTitre":getContentPane().add(AffichageBibliTitre()); break;
+            case "AffichagePrix":getContentPane().add(AffichagePrix()); break;
 
 
             default:getContentPane().add(Acceuil());break;
@@ -100,7 +102,7 @@ public class Fenetre extends JFrame {
         Affichage.add(Bouton("AffichageBibli"));
         Affichage.add(Bouton("AffichageAuteurs"));
         Affichage.add(Bouton("TrierParTitre"));
-        Affichage.add(Bouton("AjoueManuel"));
+        Affichage.add(Bouton("AffichagePrix"));
         Affichage.add(Bouton("AjoueRevue"));
         Affichage.add(Retour());
         Affichage.add(new JTextArea("test"));
@@ -136,6 +138,20 @@ public class Fenetre extends JFrame {
         return Affichage;
     }
 
+    public JPanel AffichagePrix()
+    { JPanel Affichage=new JPanel();
+        Affichage.setName("Affichage");
+
+        Affichage.add(new prixLitteraire("prixLittéraire"));
+        Affichage.setBackground(Color.red);
+        Affichage.add(Retour());
+        Affichage.setLayout(new GridLayout(5, 1));
+        tampon += "test";
+        Affichage.add(new JTextArea(tampon));
+
+
+        return Affichage;
+    }
 
 
     public JPanel Acceuil()
@@ -249,15 +265,18 @@ public class Fenetre extends JFrame {
             bouton.addActionListener(new valider());
             add(Label);
             add(champ);
-            add(champ);
+            add(bouton);
             setLayout(new GridLayout(1, 3));
         }
 
         class valider implements ActionListener   {@Override   public void actionPerformed(ActionEvent e)
         {
-            bibliotheque.rechercherParPrix(champ.getText());
+            tampon = bibliotheque.rechercherParPrix(champ.getText()).toString();
 
-        }}
+        }
+
+
+        }
 
     }
 
@@ -291,7 +310,6 @@ public class Fenetre extends JFrame {
 
         class Valider implements ActionListener
         {@Override   public void actionPerformed(ActionEvent e) {
-
             for (Formulaire ligne : form) {if(ligne.champ.getText().equals("")){affichage.setText("Tous les champs ne sont pas remplis");return;} }
 
 
