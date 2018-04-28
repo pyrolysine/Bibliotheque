@@ -6,6 +6,7 @@ import model.Livre;
 import model.Manuel;
 import model.Revue;
 import model.Roman;
+import swing.Fenetre;
 
 import java.util.Collections;
 
@@ -34,11 +35,13 @@ public class TestDocuments {
 		lectureAffichageDocumentArray("./src/Bibliotheque_test.csv");
 */
 		Bibliotheque bibliotheque = lectureDocument2("./src/Bibliotheque_test.csv");
-
+/*
 
 		bibliotheque.afficher();
 		bibliotheque.TrieParTitreDesc();
-		bibliotheque.afficher();
+		bibliotheque.afficher();*/
+
+		Fenetre Mafenetre=new Fenetre("ee",400,400);
 	}
 
 }

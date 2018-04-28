@@ -59,6 +59,5 @@ public class Livre extends Document implements InterfaceAuteur {
 	protected Livre clone() throws CloneNotSupportedException {
 		Livre copy = (Livre)super.clone();
 		return copy;
-
 	}
 }
