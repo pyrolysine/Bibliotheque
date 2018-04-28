@@ -1,6 +1,7 @@
 package model;
 
 
+import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -67,13 +68,14 @@ public class Bibliotheque {
 		}
 	}
 
+
 	@Override
 	public String toString() {
-		return ("Bibliotheque de " + documents.size() + " documents" +
-				for (Document docs : this.documents){
-					docs.toString();
-				}
-		)
+	    String documentsList = new String();
+	    for (Document docs : documents){
+	        documentsList += docs.toString();
+        }
+		return ("Bibliotheque de " + documents.size() + " documents" + documentsList );
 	}
 	public void rechercherParPrix(){
 
