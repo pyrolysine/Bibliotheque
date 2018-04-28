@@ -1,7 +1,5 @@
 package swing;
 
-import model.Bibliotheque;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -34,7 +32,7 @@ public class Fenetre extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-        getContentPane().add(Acceuil(), BorderLayout.CENTER);
+        getContentPane().add(Acceuil());
         this.setTitle("Acceuil");
 
         //---------------------------------------------------
@@ -83,18 +81,17 @@ public class Fenetre extends JFrame {
     public JPanel Affichage()
     { JPanel Affichage=new JPanel();
         Affichage.setName("Affichage");
-        Affichage.setBackground(Color.red);
-        Affichage.add(Retour());
-        Affichage.add(new JTextArea("texte de test"));
-        return Affichage;
-    }
 
-    public JPanel AffichageAll(Bibliotheque bibliotheque){
-        JPanel Affichage=new JPanel();
-        Affichage.setName("Affichage");
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
-        Affichage.add(new JTextArea(bibliotheque.toString()));
+
+
+
+
+
+
+
+
         return Affichage;
     }
 
@@ -102,21 +99,31 @@ public class Fenetre extends JFrame {
     {JPanel Acceuil=new JPanel();
         Acceuil.setName("Acceuil");
         Acceuil.setBackground(Color.blue);
+        Acceuil.setLayout(new GridLayout(5, 1));
         Acceuil.add(Bouton("Affichage"));
         Acceuil.add(Bouton("AjoueLivre"));
         Acceuil.add(Bouton("AjoueRoman"));
         Acceuil.add(Bouton("AjoueManuel"));
         Acceuil.add(Bouton("AjoueRevue"));
 
+
     return Acceuil;
     }
 
     public JPanel AjoueLivre()
-    { JPanel Affichage=new JPanel();
-        Affichage.setName("AjoueLivre");
-        Affichage.setBackground(Color.pink);
-        Affichage.add(Retour());
-        return Affichage;
+    { JPanel AjoueLivre=new JPanel();
+        AjoueLivre.setName("AjoueLivre");
+        AjoueLivre.setBackground(Color.pink);
+        AjoueLivre.setLayout(new GridLayout(5, 1));
+
+
+        AjoueLivre.add(new Formulaire("test","valeur"));
+        AjoueLivre.add(new Formulaire("test","valeur"));
+        AjoueLivre.add(new Formulaire("test","valeur"));
+        AjoueLivre.add(new Formulaire("test","valeur"));
+
+        AjoueLivre.add(Retour());
+        return AjoueLivre;
     }
     public JPanel AjoueRoman()
     { JPanel Affichage=new JPanel();
@@ -143,6 +150,6 @@ public class Fenetre extends JFrame {
 
 
     //--------------------------------------------------------------------------------------------------------------------------
-    class changementFenetre implements ActionListener {@Override   public void actionPerformed(ActionEvent e) {changementFenetre(e.getActionCommand());    System.out.println(e.getActionCommand()); }}
-    class RetourAcceuil implements ActionListener {    @Override   public void actionPerformed(ActionEvent e) {changementFenetre("Acceuil");      System.out.println(e.getActionCommand()); }}
+    class changementFenetre implements ActionListener   {@Override   public void actionPerformed(ActionEvent e) {changementFenetre(e.getActionCommand());    System.out.println(e.getActionCommand()); }}
+    class RetourAcceuil implements ActionListener       {@Override   public void actionPerformed(ActionEvent e) {changementFenetre("Acceuil");      System.out.println(e.getActionCommand()); }}
 }
