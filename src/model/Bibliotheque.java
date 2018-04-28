@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import static java.util.Collections.sort;
+
 public class Bibliotheque {
 
 	// Liste des documents de la bibliotheque
@@ -73,7 +75,7 @@ public class Bibliotheque {
 	public String toString() {
 	    String documentsList = new String();
 	    for (Document docs : documents){
-	        documentsList += docs.toString();
+	        documentsList +=  "\n" + docs.toString();
         }
 		return ("Bibliotheque de " + documents.size() + " documents" + documentsList );
 	}
@@ -111,9 +113,11 @@ public class Bibliotheque {
 
 
 	public void TrieParTitre(){
-        Collections.sort(documents, new TrieParTitre());}
-	public void TrieParTitreDesc(){Collections.sort(documents, new TrieParTitre());}
-	public void TrieParnumEnreg(){Collections.sort(documents, new TrieParnumEnreg());}
+        sort(documents, new TrieParTitre());}
+	public void TrieParTitreDesc(){
+		sort(documents, new TrieParTitre());}
+	public void TrieParnumEnreg(){
+		sort(documents, new TrieParnumEnreg());}
 
 
 	public class TrieParTitre implements Comparator<Document> {
@@ -181,4 +185,24 @@ public class Bibliotheque {
 		}
 		return bibliType;
 	}
+
+
+
+	public void afficherDocument(ArrayList<Document> Documents){
+		for(Document docs : Documents){
+			System.out.println(docs);
+		}
+	}
+
+	public ArrayList<String> afficherAuteur(ArrayList<Document> Documents){
+		ArrayList<String> listeAuteurs= new ArrayList<>();
+		for (Document docs : Documents){
+			if (docs instanceof Livre){
+				listeAuteurs.add(((Livre)(docs)).getAuteur());
+			}
+		}
+		sort(listeAuteurs);
+		return listeAuteurs;
+	}
+
 }

@@ -6,12 +6,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.PublicKey;
 import java.util.ArrayList;
+
+import static controller.GestionFichier.lectureDocument2;
 
 public class Fenetre extends JFrame {
 
 
     public int width,height;
+    public Bibliotheque bibliotheque = lectureDocument2("./src/Bibliotheque_test.csv");
 
 
     public Fenetre(){
@@ -58,7 +62,6 @@ public class Fenetre extends JFrame {
     {
 
         getContentPane().removeAll();
-
         switch (NomFenetre)
         {
             case "Acceuil":getContentPane().add(Acceuil());break;
@@ -67,6 +70,11 @@ public class Fenetre extends JFrame {
             case "AjoueRoman":getContentPane().add(AjoueRoman());break;
             case "AjoueManuel":getContentPane().add(AjoueManuel());break;
             case "AjoueRevue":getContentPane().add(AjoueRevue());break;
+            case "AffichageBibli":getContentPane().add(AffichageBibli()); break;
+            case "AffichageAuteurs":getContentPane().add(AffichageAuteurs(bibliotheque.afficherAuteur(bibliotheque.getDocuments()))); break;
+            case "TrierParTitre":getContentPane().add(AffichageBibliTitre()); break;
+
+
             default:getContentPane().add(Acceuil());break;
         }
         revalidate();
@@ -86,26 +94,40 @@ public class Fenetre extends JFrame {
         Affichage.setName("Affichage");
 
         Affichage.setBackground(Color.red);
+        Affichage.setLayout(new GridLayout(5, 1));
+        Affichage.add(Bouton("AffichageBibli"));
+        Affichage.add(Bouton("AffichageAuteurs"));
+        Affichage.add(Bouton("AjoueRoman"));
+        Affichage.add(Bouton("AjoueManuel"));
+        Affichage.add(Bouton("AjoueRevue"));
         Affichage.add(Retour());
         Affichage.add(new JTextArea("test"));
         return Affichage;
     }
-    public JPanel Affichage(Bibliotheque bibliotheque)
+    public JPanel AffichageBibli()
     { JPanel Affichage=new JPanel();
         Affichage.setName("Affichage");
-
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
         Affichage.add(new JTextArea(bibliotheque.toString()));
         return Affichage;
     }
-    public JPanel Affichage(ArrayList<String> listString)
+    public JPanel AffichageAuteurs(ArrayList<String> listString)
     { JPanel Affichage=new JPanel();
         Affichage.setName("Affichage");
 
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
         Affichage.add(new JTextArea(listString.toString()));
+        return Affichage;
+    }
+    public JPanel AffichageBibliTitre()
+    { JPanel Affichage=new JPanel();
+        Affichage.setName("Affichage");
+
+        Affichage.setBackground(Color.red);
+        Affichage.add(Retour());
+        Affichage.add(new JTextArea( bibliotheque.TrieParTitre() ) );
         return Affichage;
     }
 
