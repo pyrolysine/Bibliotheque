@@ -97,7 +97,7 @@ public class Fenetre extends JFrame {
         Affichage.setLayout(new GridLayout(5, 1));
         Affichage.add(Bouton("AffichageBibli"));
         Affichage.add(Bouton("AffichageAuteurs"));
-        Affichage.add(Bouton("AjoueRoman"));
+        Affichage.add(Bouton("TrierParTitre"));
         Affichage.add(Bouton("AjoueManuel"));
         Affichage.add(Bouton("AjoueRevue"));
         Affichage.add(Retour());
@@ -127,7 +127,7 @@ public class Fenetre extends JFrame {
 
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
-        Affichage.add(new JTextArea( bibliotheque.TrieParTitre() ) );
+        Affichage.add(new JTextArea( bibliotheque.TrieParTitre().toString() ) );
         return Affichage;
     }
 

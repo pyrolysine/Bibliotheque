@@ -112,8 +112,9 @@ public class Bibliotheque {
 	}
 
 
-	public void TrieParTitre(){
-        sort(documents, new TrieParTitre());}
+	public ArrayList<Document> TrieParTitre(){
+        sort(documents, new TrieParTitre());
+		return documents;}
 	public void TrieParTitreDesc(){
 		sort(documents, new TrieParTitre());}
 	public void TrieParnumEnreg(){
