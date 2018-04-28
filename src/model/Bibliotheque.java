@@ -123,9 +123,21 @@ public class Bibliotheque {
 	public void TrieParnumEnreg(){Collections.sort(documents, new TrieParnumEnreg());}
 
 
-	public class TrieParTitre implements Comparator<Document>
-	{public int compare(Document a, Document b)
-	{return a.getTitre().compareTo(b.getTitre());}
+	public class TrieParTitre implements Comparator<Document> {
+        public int compare(Document a, Document b) {
+            return a.getTitre().compareTo(b.getTitre());
+        }
+    }
+        public class TrieParTitredesc implements Comparator<Document>
+        {public int compare(Document b, Document a)
+        {return a.getTitre().compareTo(b.getTitre());}
+        }
+        public class TrieParnumEnreg implements Comparator<Document>
+        {public int compare(Document a, Document b)
+        {return a.getNumEnreg()-b.getNumEnreg(); }
+        }
+
+
 	public void rechercherParPrix(String prix){
 		for (Document docs: this.documents){
 			if (docs instanceof Roman){
@@ -135,7 +147,6 @@ public class Bibliotheque {
 			}
 		}
 	}
-
 	public Bibliotheque supprimerParPrix(String prix){
 		for (Document docs: this.documents){
 			if (docs instanceof Roman){
@@ -146,13 +157,4 @@ public class Bibliotheque {
 		}
 		return this;
 	}
-	public class TrieParTitredesc implements Comparator<Document>
-	{public int compare(Document b, Document a)
-	{return a.getTitre().compareTo(b.getTitre());}
-	}
-	public class TrieParnumEnreg implements Comparator<Document>
-	{public int compare(Document a, Document b)
-		{return a.getNumEnreg()-b.getNumEnreg(); }
-	}
-
 }
