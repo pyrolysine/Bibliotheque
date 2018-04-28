@@ -37,7 +37,7 @@ public class TestDocuments {
 
 
 		bibliotheque.afficher();
-		bibliotheque.TrieParTitre();
+		bibliotheque.TrieParTitreDesc();
 		bibliotheque.afficher();
 	}
 
