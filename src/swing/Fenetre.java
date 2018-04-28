@@ -81,7 +81,6 @@ public class Fenetre extends JFrame {
     public JPanel Affichage()
     { JPanel Affichage=new JPanel();
         Affichage.setName("Affichage");
-<<<<<<< HEAD
 
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
@@ -93,13 +92,14 @@ public class Fenetre extends JFrame {
 
 
 
-=======
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
 
         Affichage.add(new JTextArea("texte de test"));
 
->>>>>>> parent of 0d5ace5... Test Zone de texte
+
+        Affichage.add(new JTextArea("texte de test"));
+
         return Affichage;
     }
 
