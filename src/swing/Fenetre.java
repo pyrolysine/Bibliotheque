@@ -1,9 +1,12 @@
 package swing;
 
+import model.Bibliotheque;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Fenetre extends JFrame {
 
@@ -84,10 +87,29 @@ public class Fenetre extends JFrame {
 
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
-
-
+        Affichage.add(new JTextArea("test"));
         return Affichage;
     }
+    public JPanel Affichage(Bibliotheque bibliotheque)
+    { JPanel Affichage=new JPanel();
+        Affichage.setName("Affichage");
+
+        Affichage.setBackground(Color.red);
+        Affichage.add(Retour());
+        Affichage.add(new JTextArea(bibliotheque.toString()));
+        return Affichage;
+    }
+    public JPanel Affichage(ArrayList<String> listString)
+    { JPanel Affichage=new JPanel();
+        Affichage.setName("Affichage");
+
+        Affichage.setBackground(Color.red);
+        Affichage.add(Retour());
+        Affichage.add(new JTextArea(listString.toString()));
+        return Affichage;
+    }
+
+
 
     public JPanel Acceuil()
     {JPanel Acceuil=new JPanel();
