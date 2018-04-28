@@ -144,7 +144,6 @@ public class Bibliotheque {
 		}
 		return this;
 	}
-<<<<<<< HEAD
 
 	@Override
 	protected Bibliotheque clone() throws CloneNotSupportedException {
@@ -152,6 +151,28 @@ public class Bibliotheque {
 		copy.documents = (ArrayList<Document>) documents.clone(); 
 		return copy;
 	}
-=======
->>>>>>> cc2fb6cfad6540bdb8ad29e7ba3c034b4beb82ca
+
+	public Bibliotheque toutesLesOccurences(String type){
+		Bibliotheque bibliType = new Bibliotheque();
+		for (Document docs : this.documents){
+			if (type.equals("Livre")){
+				if (docs instanceof Livre){
+					bibliType.documents.add(docs);
+				}
+			} else if (type.equals("Revue")){
+				if (docs instanceof Revue){
+					bibliType.documents.add(docs);
+				}
+			} else if (type.equals("Manuel")){
+				if (docs instanceof Manuel){
+					bibliType.documents.add(docs);
+				}
+			} else if (type.equals("Roman")){
+				if (docs instanceof Roman){
+					bibliType.documents.add(docs);
+				}
+			}
+		}
+		return bibliType;
+	}
 }
