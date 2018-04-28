@@ -136,14 +136,16 @@ public class Bibliotheque {
         }
 
 
-	public void rechercherParPrix(String prix){
+	public ArrayList<Document> rechercherParPrix(String prix){
+		ArrayList<Document> listePrix = new ArrayList<Document>();
 		for (Document docs: this.documents){
 			if (docs instanceof Roman){
 				if (((Roman)(docs)).getPrixLitteraire().equals(prix)){
-					System.out.println(docs);
+					listePrix.add(docs);
 				}
 			}
 		}
+		return listePrix;
 	}
 	public Bibliotheque supprimerParPrix(String prix){
 		for (Document docs: this.documents){
