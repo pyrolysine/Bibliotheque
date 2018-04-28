@@ -1,11 +1,12 @@
 package swing;
 
-import model.Bibliotheque;
+import model.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 import java.security.PublicKey;
 import java.util.ArrayList;
 
@@ -62,6 +63,7 @@ public class Fenetre extends JFrame {
     {
 
         getContentPane().removeAll();
+
         switch (NomFenetre)
         {
             case "Acceuil":getContentPane().add(Acceuil());break;
@@ -107,6 +109,7 @@ public class Fenetre extends JFrame {
     public JPanel AffichageBibli()
     { JPanel Affichage=new JPanel();
         Affichage.setName("Affichage");
+
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
         Affichage.add(new JTextArea(bibliotheque.toString()));
@@ -127,7 +130,9 @@ public class Fenetre extends JFrame {
 
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
+
         Affichage.add(new JTextArea( bibliotheque.TrieParTitre().toString() ) );
+
         return Affichage;
     }
 
@@ -149,45 +154,170 @@ public class Fenetre extends JFrame {
     }
 
     public JPanel AjoueLivre()
-    { JPanel AjoueLivre=new JPanel();
+    {
+        LinkedList<String> ListeFormulaire=new LinkedList<String>();
+        ListeFormulaire.add("Titre :");
+        ListeFormulaire.add("Auteur :");
+        ListeFormulaire.add("Nombre de pages :");
+
+        JPanel AjoueLivre= new ListFormulaire("Livre",ListeFormulaire);;
         AjoueLivre.setName("AjoueLivre");
         AjoueLivre.setBackground(Color.pink);
-        AjoueLivre.setLayout(new GridLayout(5, 1));
 
 
-        AjoueLivre.add(new Formulaire("test","valeur"));
-        AjoueLivre.add(new Formulaire("test","valeur"));
-        AjoueLivre.add(new Formulaire("test","valeur"));
-        AjoueLivre.add(new Formulaire("test","valeur"));
-
-        AjoueLivre.add(Retour());
         return AjoueLivre;
     }
     public JPanel AjoueRoman()
-    { JPanel Affichage=new JPanel();
-        Affichage.setName("AjoueRoman");
-        Affichage.setBackground(Color.yellow);
-        Affichage.add(Retour());
-        return Affichage;
+    {  LinkedList<String> ListeFormulaire=new LinkedList<String>();
+        ListeFormulaire.add("Titre :");
+        ListeFormulaire.add("Auteur :");
+        ListeFormulaire.add("Nombre de pages :");
+        ListeFormulaire.add("Prix Litteraire :");
+        JPanel AjoueRoman= new ListFormulaire("Roman",ListeFormulaire);;
+        AjoueRoman.setName("AjoueRoman");
+        AjoueRoman.setBackground(Color.pink);
+
+        return AjoueRoman;
     }
 
     public JPanel AjoueManuel()
-    { JPanel Affichage=new JPanel();
-        Affichage.setName("AjoueManuel");
-        Affichage.setBackground(Color.green);
-        Affichage.add(Retour());
-        return Affichage;
+    {
+        LinkedList<String> ListeFormulaire=new LinkedList<String>();
+        ListeFormulaire.add("Titre :");
+        ListeFormulaire.add("Auteur :");
+        ListeFormulaire.add("Nombre de pages :");
+        ListeFormulaire.add("Niveau :");
+        JPanel AjoueManuel= new ListFormulaire("Manuel",ListeFormulaire);;
+        AjoueManuel.setName("AjoueManuel");
+        AjoueManuel.setBackground(Color.pink);
+
+
+        return AjoueManuel;
     }
     public JPanel AjoueRevue()
-    { JPanel Affichage=new JPanel();
-        Affichage.setName("AjoueRevue");
-        Affichage.setBackground(Color.gray);
-        Affichage.add(Retour());
-        return Affichage;
+    { LinkedList<String> ListeFormulaire=new LinkedList<String>();
+        ListeFormulaire.add("Titre :");
+        ListeFormulaire.add("Année :");
+        ListeFormulaire.add("Mois");
+
+        JPanel AjoueRevue= new ListFormulaire("Revue",ListeFormulaire);;
+        AjoueRevue.setName("AjoueRevue");
+        AjoueRevue.setBackground(Color.pink);
+
+
+        return AjoueRevue;
     }
 
 
     //--------------------------------------------------------------------------------------------------------------------------
+
+
     class changementFenetre implements ActionListener   {@Override   public void actionPerformed(ActionEvent e) {changementFenetre(e.getActionCommand());    System.out.println(e.getActionCommand()); }}
+
+
     class RetourAcceuil implements ActionListener       {@Override   public void actionPerformed(ActionEvent e) {changementFenetre("Acceuil");      System.out.println(e.getActionCommand()); }}
+//--------------------------------------------------------------------------------------------------------------------
+//----------------------------------  Formulaire    -----------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------
+    public class Formulaire extends JPanel {
+
+        public JLabel Label;
+        public JTextField champ;
+
+        public  Formulaire(String Entrer,String ValeurDefault)
+        {Label=new JLabel(Entrer);
+            champ=new JTextField(ValeurDefault);
+            add(Label);
+            add(champ);
+            setLayout(new GridLayout(1, 2));
+        }
+
+    }
+    //--------------------------------------------------------------------------------------------------------------------
+//----------------------------------              -----------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------
+    public class prixLitteraire  extends JPanel {
+
+        public JLabel Label;
+        public JTextField champ;
+        public JButton bouton;
+
+        public  prixLitteraire(String Entrer)
+        {Label=new JLabel(Entrer);
+         champ=new JTextField();
+            bouton=new JButton("valider");
+            bouton.addActionListener(new valider());
+            add(Label);
+            add(champ);
+            add(champ);
+            setLayout(new GridLayout(1, 3));
+        }
+
+        class valider implements ActionListener   {@Override   public void actionPerformed(ActionEvent e)
+        {
+            bibliotheque.rechercherParPrix(champ.getText());
+
+        }}
+
+    }
+
+//--------------------------------------------------------------------------------------------------------------------
+//----------------------------------  ListFormulaire    -----------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------
+    public class ListFormulaire extends JPanel
+    {
+        String TypeConstruit;
+        LinkedList<Formulaire> form=new LinkedList<>();
+        JButton bouton=new JButton("Valider");
+        JLabel affichage=new JLabel("");
+
+        public ListFormulaire(String typeConstruit,LinkedList<String> titre)
+        {TypeConstruit=typeConstruit;
+            setLayout(new GridLayout(3+titre.size(), 1));
+            for(String ligne:titre)
+            {
+                form.add(new Formulaire(ligne,""));
+            }
+            bouton.addActionListener(new ListFormulaire.Valider());
+
+            for(Formulaire ligne:form)
+            { add(ligne);}
+
+            add(affichage);
+            add(bouton);
+            add(Retour());
+        }
+
+
+        class Valider implements ActionListener
+        {@Override   public void actionPerformed(ActionEvent e) {
+
+            for (Formulaire ligne : form) {if(ligne.champ.getText().equals("")){affichage.setText("Tous les champs ne sont pas remplis");return;} }
+
+
+            LinkedList<String> text=new LinkedList<>();
+            for (Formulaire ligne : form)
+            {  text.add(ligne.champ.getText()); }
+
+
+    try{ switch (TypeConstruit)
+    { case "Livre":bibliotheque.addDocument(new Livre(text.get(0),text.get(1),Integer.parseInt(text.get(2))));break;
+        case "Roman":bibliotheque.addDocument(new Roman(text.get(0),text.get(1),Integer.parseInt(text.get(2)),text.get(3)));break;
+        case "Revue":bibliotheque.addDocument(new Revue(text.get(0),Integer.parseInt(text.get(1)),Integer.parseInt(text.get(2))));break;
+        case "Manuel":bibliotheque.addDocument(new Manuel(text.get(0),text.get(1),Integer.parseInt(text.get(2)),Integer.parseInt(text.get(3))));break;
+        default:affichage.setText("erreur type de document non renseigner");return;
+    }
+        affichage.setText(TypeConstruit+ " Ajouter a la bibliotheque");
+    }
+    catch (java.lang.NumberFormatException Exception)
+        {
+            affichage.setText("Champ nombre remplie avec un texte");
+            }
+        }
+
+
+
+        }
+    }
+
 }
