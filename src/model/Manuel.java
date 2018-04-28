@@ -20,13 +20,7 @@ public class Manuel extends Livre {
 
 	@Override
 	public String toString() {
-		return  "Manuel{" +
-				"numEnreg=" + getNumEnreg() + '\t' +
-				", titre='" + getTitre() + "\t\t" +
-				"auteur='" + getAuteur() + '\t' +
-				", nbPages=" + getNbPages() + '\t' +
-				"niveau=" + niveau +
-				'}';
+		return this.getNumEnreg() + "" + this.getTitre() + "" + this.getAuteur() + "" + this.getNbPages() + "pages" + this.getNiveau() + "Annee";
 	}
 
 	@Override

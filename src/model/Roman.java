@@ -43,13 +43,8 @@ public class Roman extends Livre {
 
 	@Override
 	public String toString() {
-		return "Roman{" +
-				"numEnreg=" + getNumEnreg() + '\t' +
-				", titre='" + getTitre() + "\t\t" +
-				"auteur='" + getAuteur() + '\t' +
-				", nbPages=" + getNbPages() + '\t' +
-				"prixLitteraire=" + prixLitteraire +
-				'}';
+		return this.getNumEnreg() + "" + this.getTitre() + "" + this.getAuteur() + "" + this.getNbPages() + "p" + this.getPrixLitteraire();
+
 	}
 
 	@Override

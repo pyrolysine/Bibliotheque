@@ -35,12 +35,8 @@ public class Livre extends Document implements InterfaceAuteur {
 	@Override
 
 	public String toString() {
-		return "Livre{" +
-				"numEnreg=" + getNumEnreg() + '\t' +
-				", titre='" + getTitre() + "\t\t" +
-				"auteur='" + auteur + '\t' +
-				", nbPages=" + nbPages +
-				'}';
+		return this.getNumEnreg() + "" + this.getTitre() + "" + this.getAuteur() + "" + this.getNbPages() + "pages" ;
+
 	}
 
 	@Override

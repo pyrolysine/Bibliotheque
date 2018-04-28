@@ -70,7 +70,11 @@ public class Bibliotheque {
 
 	@Override
 	public String toString() {
-		return "Bibliotheque de " + documents.size() + " documents";
+		return ("Bibliotheque de " + documents.size() + " documents" +
+				for (Document docs : this.documents){
+					docs.toString();
+				}
+		)
 	}
 	public void rechercherParPrix(){
 
