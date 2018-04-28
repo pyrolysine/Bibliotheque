@@ -1,7 +1,5 @@
 package model;
 import java.lang.String;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 // TO DO ...
@@ -64,6 +62,10 @@ public abstract class Document {
 
 
 
+	@Override
+	protected Document clone() throws CloneNotSupportedException {
+		Document copy = (Document) super.clone();
+		return copy;
 
 
 }

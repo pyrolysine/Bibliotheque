@@ -1,6 +1,7 @@
 package model;
 
 
+import java.util.ArrayList;
 import java.util.*;
 
 
@@ -125,6 +126,25 @@ public class Bibliotheque {
 	public class TrieParTitre implements Comparator<Document>
 	{public int compare(Document a, Document b)
 	{return a.getTitre().compareTo(b.getTitre());}
+	public void rechercherParPrix(String prix){
+		for (Document docs: this.documents){
+			if (docs instanceof Roman){
+				if (((Roman)(docs)).getPrixLitteraire().equals(prix)){
+					System.out.println(docs);
+				}
+			}
+		}
+	}
+
+	public Bibliotheque supprimerParPrix(String prix){
+		for (Document docs: this.documents){
+			if (docs instanceof Roman){
+				if (((Roman)(docs)).getPrixLitteraire().equals(prix)){
+					this.documents.remove(docs);
+				}
+			}
+		}
+		return this;
 	}
 	public class TrieParTitredesc implements Comparator<Document>
 	{public int compare(Document b, Document a)
