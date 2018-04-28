@@ -1,5 +1,7 @@
 package model;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 // TO DO ...
@@ -39,7 +41,7 @@ public abstract class Document {
 	public String toString() {
 		return "Document{" +
 				"numEnreg=" + numEnreg +
-				", titre='" + titre + '\'' +
+				", titre='" + titre + "\t\t" +
 				'}';
 	}
 
@@ -53,6 +55,13 @@ public abstract class Document {
 		if (numEnreg != document.numEnreg) return false;
 		return titre.equals(document.titre);
 	}
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 
 

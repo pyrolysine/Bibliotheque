@@ -36,9 +36,9 @@ public class Livre extends Document implements InterfaceAuteur {
 
 	public String toString() {
 		return "Livre{" +
-				"numEnreg=" + getNumEnreg() +
-				", titre='" + getTitre() + '\'' +
-				"auteur='" + auteur + '\'' +
+				"numEnreg=" + getNumEnreg() + '\t' +
+				", titre='" + getTitre() + "\t\t" +
+				"auteur='" + auteur + '\t' +
 				", nbPages=" + nbPages +
 				'}';
 	}

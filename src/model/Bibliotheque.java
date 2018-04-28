@@ -1,9 +1,7 @@
 package model;
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 
 public class Bibliotheque {
@@ -86,8 +84,21 @@ public class Bibliotheque {
 	public String toString() {
 		return "Bibliotheque de " + documents.size() + " documents";
 	}
+	public void rechercherParPrix(){
+
+	}
+
+	public void afficher(){
+		System.out.println();
+		for(Document ligne:documents)
+		{
+			System.out.println(ligne.toString());
+		}
+		System.out.println();
+	}
 
 
+	//---------------------------------------------------------------------------------------
 	public void chercherDocumentParTitre(String titre){
 		for (Document docs: this.documents){
 			if (docs.getTitre().equals(titre)){
@@ -105,9 +116,23 @@ public class Bibliotheque {
 		return this;
 	}
 
-	public void rechercherParPrix(){
-		
-	}
 
+	public void TrieParTitre(){Collections.sort(documents, new TrieParTitre());}
+	public void TrieParTitreDesc(){Collections.sort(documents, new TrieParTitre());}
+	public void TrieParnumEnreg(){Collections.sort(documents, new TrieParnumEnreg());}
+
+
+	public class TrieParTitre implements Comparator<Document>
+	{public int compare(Document a, Document b)
+	{return a.getTitre().compareTo(b.getTitre());}
+	}
+	public class TrieParTitredesc implements Comparator<Document>
+	{public int compare(Document b, Document a)
+	{return a.getTitre().compareTo(b.getTitre());}
+	}
+	public class TrieParnumEnreg implements Comparator<Document>
+	{public int compare(Document a, Document b)
+		{return a.getNumEnreg()-b.getNumEnreg(); }
+	}
 
 }

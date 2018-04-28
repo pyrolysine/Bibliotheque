@@ -21,10 +21,10 @@ public class Manuel extends Livre {
 	@Override
 	public String toString() {
 		return  "Manuel{" +
-				"numEnreg=" + getNumEnreg() +
-				", titre='" + getTitre() + '\'' +
-				"auteur='" + getAuteur() + '\'' +
-				", nbPages=" + getNbPages() +
+				"numEnreg=" + getNumEnreg() + '\t' +
+				", titre='" + getTitre() + "\t\t" +
+				"auteur='" + getAuteur() + '\t' +
+				", nbPages=" + getNbPages() + '\t' +
 				"niveau=" + niveau +
 				'}';
 	}
