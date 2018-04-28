@@ -15,21 +15,29 @@ public class Roman extends Livre {
 		this.prixLitteraire = setPrixLitteraire(prixLitteraire);
 	}
 
-	public int getPrixLitteraire() {
-		return prixLitteraire;
+	public String getPrixLitteraire() {
+		switch (prixLitteraire){
+			case 1: return "GONCOURD";
+			case 2: return "MEDICIS";
+			case 3: return "INTERALLIE";
+			case 4: return "PUBLITER";
+			default: return  "Aucun Prix";
+
+		}
+
 	}
 
 	public int setPrixLitteraire(String prixLitteraire) {
-		if(prixLitteraire == "GONCOURT"){
+		if(prixLitteraire.equals("Roman.GONCOURT")  ){
 			return GONCOURT;
-		} else if (prixLitteraire == "MEDICIS"){
+		} else if (prixLitteraire.equals("Roman.MEDICIS")){
 			return MEDICIS;
-		} else if (prixLitteraire == "INTERALLIE"){
+		} else if (prixLitteraire.equals("Roman.INTERALLIE")){
 			return INTERALLIE;
-		} else if (prixLitteraire == "PULITER"){
+		} else if (prixLitteraire.equals("Roman.PULITER")){
 			return PULITZER;
 		} else {
-			return 0;
+			return 42;
 		}
 	}
 

@@ -22,14 +22,8 @@ public class GestionFichier {
             if    (element.get(0).equals("Livre"))
             {Bibliotheque_importer.add(new Livre(element.get(1), element.get(2), Integer.parseInt(element.get(3))));}
             else  if(element.get(0).equals("Roman"))
-            {String prixLitteraire;
-                switch (element.get(4))
-                {case "1" :prixLitteraire="Roman.GONCOURT";break;
-                case "2" :prixLitteraire="Roman.MEDICIS";break;
-                case "3" :prixLitteraire="Roman.INTERALLIE";break;
-                case "4" :prixLitteraire="Roman.PULITZER";break;
-                    default: prixLitteraire="Aucun";break;
-                }
+            {String prixLitteraire  = "Roman." + element.get(4);
+
 
                 Bibliotheque_importer.add(new Roman(element.get(1), element.get(2), Integer.parseInt(element.get(3)),prixLitteraire));}
             else  if(element.get(0).equals("Revue"))
@@ -122,35 +116,39 @@ public class GestionFichier {
 
         for(Document element :Documents )
         {LinkedList<String> current=new LinkedList<String>();
+            if(element instanceof Roman)
+            {
 
-            if (element instanceof Livre)
+                current.add("Roman");
+                current.add(element.getTitre());
+                current.add(((Roman) element).getAuteur());
+                current.add(((Roman) element).getNbPages() + "");
+                current.add(((Roman) element).getPrixLitteraire());
+
+
+            }
+            else  if(element instanceof Manuel) {
+
+                current.add("Manuel");
+                current.add(element.getTitre());
+                current.add(((Manuel) element).getAuteur());
+                current.add(((Manuel) element).getNbPages() + "");
+                current.add(((Manuel) element).getNiveau() + "");
+            }
+            else if (element instanceof Livre)
             {
                 current.add("Livre");
                 current.add(element.getTitre());
                 current.add(((Livre) element).getAuteur());
                 current.add(((Livre) element).getNbPages()+ "");
             }
-            else  if(element instanceof Roman)
-            {
-                current.add("Roman");
-                current.add(element.getTitre());
-                current.add(((Roman) element).getAuteur());
-                current.add(((Roman) element).getNbPages() + "");
-                current.add(((Roman) element).getPrixLitteraire() + "");
-            }
             else  if(element instanceof Revue)
             {
+
                 current.add("Revue");
                 current.add(element.getTitre());
                 current.add(((Revue) element).getMois() + "");
                 current.add(((Revue) element).getAnnee() + "");
-            }
-            else  if(element instanceof Manuel) {
-                current.add("Manuel");
-                current.add(element.getTitre());
-                current.add(((Manuel) element).getAuteur());
-                current.add(((Manuel) element).getNbPages() + "");
-                current.add(((Manuel) element).getNiveau() + "");
             }
 
             bibliotheque.add(current);
