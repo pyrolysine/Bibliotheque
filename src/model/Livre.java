@@ -55,4 +55,10 @@ public class Livre extends Document implements InterfaceAuteur {
 		return auteur != null ? auteur.equals(livre.auteur) : livre.auteur == null;
 	}
 
+	@Override
+	protected Document clone() throws CloneNotSupportedException {
+		Livre copy = (Livre)super.clone();
+		copy.s
+		return super.clone();
+	}
 }

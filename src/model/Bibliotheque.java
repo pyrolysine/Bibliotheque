@@ -2,9 +2,6 @@ package model;
 
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 
 public class Bibliotheque {
 
@@ -105,8 +102,25 @@ public class Bibliotheque {
 		return this;
 	}
 
-	public void rechercherParPrix(){
-		
+	public void rechercherParPrix(String prix){
+		for (Document docs: this.documents){
+			if (docs instanceof Roman){
+				if (((Roman)(docs)).getPrixLitteraire().equals(prix)){
+					System.out.println(docs);
+				}
+			}
+		}
+	}
+
+	public Bibliotheque supprimerParPrix(String prix){
+		for (Document docs: this.documents){
+			if (docs instanceof Roman){
+				if (((Roman)(docs)).getPrixLitteraire().equals(prix)){
+					this.documents.remove(docs);
+				}
+			}
+		}
+		return this;
 	}
 
 

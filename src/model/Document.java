@@ -3,7 +3,7 @@ import java.lang.String;
 import java.util.Comparator;
 
 // TO DO ...
-public abstract class Document {
+public abstract class Document implements Cloneable{
 
 	private static int nbrDoc;
 	private int numEnreg;
@@ -54,7 +54,10 @@ public abstract class Document {
 		return titre.equals(document.titre);
 	}
 
+	@Override
+	protected Document clone() throws CloneNotSupportedException {
+		Document copy = (Document) super.clone();
+		return copy;
 
-
-
+	}
 }
