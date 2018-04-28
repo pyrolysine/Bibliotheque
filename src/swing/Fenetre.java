@@ -39,10 +39,10 @@ public class Fenetre extends JFrame {
         this.setVisible(true);
     }
 
- // ----------------------------------------------------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------------------------
     public JButton Retour()
     {JButton retour=new JButton("Retour");
-    retour.addActionListener(new RetourAcceuil());
+        retour.addActionListener(new RetourAcceuil());
         return  retour;
     }
     public JButton Bouton(String Contenu)
@@ -86,20 +86,6 @@ public class Fenetre extends JFrame {
         Affichage.add(Retour());
 
 
-
-
-
-
-
-
-        Affichage.setBackground(Color.red);
-        Affichage.add(Retour());
-
-        Affichage.add(new JTextArea("texte de test"));
-
-
-        Affichage.add(new JTextArea("texte de test"));
-
         return Affichage;
     }
 
@@ -115,7 +101,7 @@ public class Fenetre extends JFrame {
         Acceuil.add(Bouton("AjoueRevue"));
 
 
-    return Acceuil;
+        return Acceuil;
     }
 
     public JPanel AjoueLivre()
