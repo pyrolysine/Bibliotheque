@@ -4,6 +4,7 @@ import model.Document;
 import model.Livre;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static java.util.Collections.sort;
 
@@ -30,7 +31,7 @@ public class Affichage {
         }
     }
 
-    public ArrayList<Document> triParTitre(ArrayList<Document> documents){
-        return documents;
-    }
+
+
+
 }

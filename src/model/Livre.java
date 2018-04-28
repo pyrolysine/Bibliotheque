@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Comparator;
+
 // TO DO ...
 public class Livre extends Document implements InterfaceAuteur {
 
@@ -52,4 +54,5 @@ public class Livre extends Document implements InterfaceAuteur {
 		if (nbPages != livre.nbPages) return false;
 		return auteur != null ? auteur.equals(livre.auteur) : livre.auteur == null;
 	}
+
 }

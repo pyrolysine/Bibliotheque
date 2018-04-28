@@ -1,5 +1,8 @@
 package model;
 
+
+import java.util.Comparator;
+
 // TO DO ...
 public class Revue extends Document {
 

@@ -54,4 +54,7 @@ public abstract class Document {
 		return titre.equals(document.titre);
 	}
 
+
+
+
 }

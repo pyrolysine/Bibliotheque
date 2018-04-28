@@ -88,5 +88,26 @@ public class Bibliotheque {
 	}
 
 
+	public void chercherDocumentParTitre(String titre){
+		for (Document docs: this.documents){
+			if (docs.getTitre().equals(titre)){
+				System.out.println(docs);
+			}
+		}
+	}
+
+	public Bibliotheque supprimerDocumentParTitre(String titre){
+		for (Document docs: this.documents){
+			if (docs.getTitre().equals(titre)){
+				this.documents.remove(docs);
+			}
+		}
+		return this;
+	}
+
+	public void rechercherParPrix(){
+		
+	}
+
 
 }
