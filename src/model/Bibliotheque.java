@@ -1,10 +1,9 @@
 package model;
 
 
-import javax.print.Doc;
 import java.util.ArrayList;
-import java.util.*;
-
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Bibliotheque {
 
@@ -109,7 +108,8 @@ public class Bibliotheque {
 	}
 
 
-	public void TrieParTitre(){Collections.sort(documents, new TrieParTitre());}
+	public void TrieParTitre(){
+        Collections.sort(documents, new TrieParTitre());}
 	public void TrieParTitreDesc(){Collections.sort(documents, new TrieParTitre());}
 	public void TrieParnumEnreg(){Collections.sort(documents, new TrieParnumEnreg());}
 
