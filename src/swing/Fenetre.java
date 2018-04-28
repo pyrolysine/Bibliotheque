@@ -83,6 +83,9 @@ public class Fenetre extends JFrame {
         Affichage.setName("Affichage");
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
+
+        Affichage.add(new JTextArea("texte de test"));
+
         return Affichage;
     }
 
