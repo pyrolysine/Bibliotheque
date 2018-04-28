@@ -35,8 +35,10 @@ public class Revue extends Document {
 	@Override
 	public String toString() {
 		return "Revue{" +
-				"mois=" + mois +
-				", annee=" + annee +
+				"numEnreg=" + getNumEnreg() + '\t' +
+				", titre='" + getTitre() + "\t\t" +
+				"mois=" + mois + '\t' +
+				", annee=" + annee + '\t' +
 				'}';
 	}
 

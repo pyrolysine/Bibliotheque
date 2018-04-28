@@ -7,6 +7,8 @@ import model.Manuel;
 import model.Revue;
 import model.Roman;
 
+import java.util.Collections;
+
 import static controller.GestionFichier.*;
 
 public class TestDocuments {
@@ -15,7 +17,7 @@ public class TestDocuments {
 	 * Programme de test.
 	 */
 	public static void main(String[] args) {
-
+/*
 		Document[] documents = {
 			new Livre("L'archipel du Goulag", "Soljenitsyne", 250),
 //			new Roman("Rouge Br�sil", "Rufin", 120, Roman.GONCOURT),
@@ -30,9 +32,13 @@ public class TestDocuments {
 		}
 
 		lectureAffichageDocumentArray("./src/Bibliotheque_test.csv");
-
+*/
 		Bibliotheque bibliotheque = lectureDocument2("./src/Bibliotheque_test.csv");
-		ecritureDocument2("./src/Bibliotheque_test2.csv", bibliotheque);
+
+
+		bibliotheque.afficher();
+		bibliotheque.TrieParTitreDesc();
+		bibliotheque.afficher();
 	}
 
 }
