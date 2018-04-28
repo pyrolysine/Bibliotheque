@@ -56,9 +56,8 @@ public class Livre extends Document implements InterfaceAuteur {
 	}
 
 	@Override
-	protected Document clone() throws CloneNotSupportedException {
+	protected Livre clone() throws CloneNotSupportedException {
 		Livre copy = (Livre)super.clone();
-		copy.s
-		return super.clone();
+		return copy;
 	}
 }

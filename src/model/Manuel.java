@@ -39,4 +39,10 @@ public class Manuel extends Livre {
 
 		return niveau == manuel.niveau;
 	}
+
+	@Override
+	protected Manuel clone() throws CloneNotSupportedException {
+		Manuel copy = (Manuel)super.clone();
+		return copy;
+	}
 }

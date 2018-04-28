@@ -52,4 +52,9 @@ public class Revue extends Document {
 		return annee == revue.annee;
 	}
 
+	@Override
+	protected Revue clone() throws CloneNotSupportedException {
+		Revue copy = (Revue)super.clone();
+		return copy;
+	}
 }

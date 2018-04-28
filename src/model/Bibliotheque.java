@@ -1,6 +1,7 @@
 package model;
 
 
+import javax.print.Doc;
 import java.util.ArrayList;
 
 public class Bibliotheque {
@@ -123,5 +124,10 @@ public class Bibliotheque {
 		return this;
 	}
 
-
+	@Override
+	protected Bibliotheque clone() throws CloneNotSupportedException {
+		Bibliotheque copy = (Bibliotheque)super.clone();
+		copy.documents = (ArrayList<Document>) documents.clone(); 
+		return copy;
+	}
 }

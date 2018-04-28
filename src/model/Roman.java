@@ -67,4 +67,10 @@ public class Roman extends Livre {
 	public int hashCode() {
 		return prixLitteraire;
 	}
+
+	@Override
+	protected Roman clone() throws CloneNotSupportedException {
+		Roman copy = (Roman) super.clone();
+		return copy;
+	}
 }
