@@ -15,25 +15,11 @@ public abstract class Document {
         this.titre = titre;
     }
 
-    public static int getNbrDoc() {
-        return nbrDoc;
-    }
-
-    public int getNumEnreg() {
-        return numEnreg;
-    }
-
-    public String getTitre() {
-        return titre;
-    }
-
-    public void setNumEnreg(int numEnreg) {
-        this.numEnreg = numEnreg;
-    }
-
-    public void setTitre(String titre) {
-        this.titre = titre;
-    }
+    public static int getNbrDoc() {        return nbrDoc;    }
+    public int getNumEnreg() {        return numEnreg;    }
+    public String getTitre() {        return titre;    }
+    public void setNumEnreg(int numEnreg) {        this.numEnreg = numEnreg;    }
+    public void setTitre(String titre) {        this.titre = titre;    }
 
     @Override
     public String toString() {

@@ -10,29 +10,15 @@ public class Bibliotheque {
 	// Liste des documents de la bibliotheque
 	private ArrayList<Document> documents;
 
-	public Bibliotheque(ArrayList<Document> documents){
-		this.documents = documents;
-	}
-	public Bibliotheque() {
-		this.documents = new ArrayList<Document>(){{}};
-	}
+	public Bibliotheque(ArrayList<Document> documents){		this.documents = documents;	}
+	public Bibliotheque() {		this.documents = new ArrayList<Document>(){{}};	}
 
+	public void setDocuments(ArrayList<Document> documents) {		this.documents = documents;	}
 
-	public void setDocuments(ArrayList<Document> documents) {
-		this.documents = documents;
-	}
+	/** Renvoie la liste des documents de la bibliotheque.*/
+	public ArrayList<Document> getDocuments() {		return documents;	}
 
-	/**
-	 * Renvoie la liste des documents de la bibliotheque.
-	 */
-	public ArrayList<Document> getDocuments() {
-		return documents;
-	}
-
-	/**
-	 * Renvoie le i ème document de la liste des documents, s'il existe,
-	 * ou null sinon.
-	 */
+	/** Renvoie le i ème document de la liste des documents, s'il existe, ou null sinon.*/
 	public Document getDocument(int i) {
 		try {
 			if (this.documents.get(i) != null) {
