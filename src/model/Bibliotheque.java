@@ -3,35 +3,23 @@ package model;
 
 import javax.print.Doc;
 import java.util.ArrayList;
+import java.util.*;
+
 
 public class Bibliotheque {
 
 	// Liste des documents de la bibliotheque
 	private ArrayList<Document> documents;
 
-	public Bibliotheque(ArrayList<Document> documents){
-		this.documents = documents;
-	}
-	public Bibliotheque() {
-		this.documents = new ArrayList<Document>(){{}};
-	}
+	public Bibliotheque(ArrayList<Document> documents){		this.documents = documents;	}
+	public Bibliotheque() {		this.documents = new ArrayList<Document>(){{}};	}
 
+	public void setDocuments(ArrayList<Document> documents) {		this.documents = documents;	}
 
-	public void setDocuments(ArrayList<Document> documents) {
-		this.documents = documents;
-	}
+	/** Renvoie la liste des documents de la bibliotheque.*/
+	public ArrayList<Document> getDocuments() {		return documents;	}
 
-	/**
-	 * Renvoie la liste des documents de la bibliotheque.
-	 */
-	public ArrayList<Document> getDocuments() {
-		return documents;
-	}
-
-	/**
-	 * Renvoie le i ème document de la liste des documents, s'il existe,
-	 * ou null sinon.
-	 */
+	/** Renvoie le i ème document de la liste des documents, s'il existe, ou null sinon.*/
 	public Document getDocument(int i) {
 		try {
 			if (this.documents.get(i) != null) {
@@ -84,8 +72,21 @@ public class Bibliotheque {
 	public String toString() {
 		return "Bibliotheque de " + documents.size() + " documents";
 	}
+	public void rechercherParPrix(){
+
+	}
+
+	public void afficher(){
+		System.out.println();
+		for(Document ligne:documents)
+		{
+			System.out.println(ligne.toString());
+		}
+		System.out.println();
+	}
 
 
+	//---------------------------------------------------------------------------------------
 	public void chercherDocumentParTitre(String titre){
 		for (Document docs: this.documents){
 			if (docs.getTitre().equals(titre)){
@@ -103,6 +104,27 @@ public class Bibliotheque {
 		return this;
 	}
 
+
+	public void TrieParTitre(){Collections.sort(documents, new TrieParTitre());}
+	public void TrieParTitreDesc(){Collections.sort(documents, new TrieParTitre());}
+	public void TrieParnumEnreg(){Collections.sort(documents, new TrieParnumEnreg());}
+
+
+	public class TrieParTitre implements Comparator<Document> {
+        public int compare(Document a, Document b) {
+            return a.getTitre().compareTo(b.getTitre());
+        }
+    }
+        public class TrieParTitredesc implements Comparator<Document>
+        {public int compare(Document b, Document a)
+        {return a.getTitre().compareTo(b.getTitre());}
+        }
+        public class TrieParnumEnreg implements Comparator<Document>
+        {public int compare(Document a, Document b)
+        {return a.getNumEnreg()-b.getNumEnreg(); }
+        }
+
+
 	public void rechercherParPrix(String prix){
 		for (Document docs: this.documents){
 			if (docs instanceof Roman){
@@ -112,7 +134,6 @@ public class Bibliotheque {
 			}
 		}
 	}
-
 	public Bibliotheque supprimerParPrix(String prix){
 		for (Document docs: this.documents){
 			if (docs instanceof Roman){
@@ -123,6 +144,7 @@ public class Bibliotheque {
 		}
 		return this;
 	}
+<<<<<<< HEAD
 
 	@Override
 	protected Bibliotheque clone() throws CloneNotSupportedException {
@@ -130,4 +152,6 @@ public class Bibliotheque {
 		copy.documents = (ArrayList<Document>) documents.clone(); 
 		return copy;
 	}
+=======
+>>>>>>> cc2fb6cfad6540bdb8ad29e7ba3c034b4beb82ca
 }

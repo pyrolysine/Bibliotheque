@@ -36,9 +36,9 @@ public class Livre extends Document implements InterfaceAuteur {
 
 	public String toString() {
 		return "Livre{" +
-				"numEnreg=" + getNumEnreg() +
-				", titre='" + getTitre() + '\'' +
-				"auteur='" + auteur + '\'' +
+				"numEnreg=" + getNumEnreg() + '\t' +
+				", titre='" + getTitre() + "\t\t" +
+				"auteur='" + auteur + '\t' +
 				", nbPages=" + nbPages +
 				'}';
 	}
@@ -58,6 +58,11 @@ public class Livre extends Document implements InterfaceAuteur {
 	@Override
 	protected Livre clone() throws CloneNotSupportedException {
 		Livre copy = (Livre)super.clone();
+<<<<<<< HEAD
 		return copy;
+=======
+
+		return super.clone();
+>>>>>>> cc2fb6cfad6540bdb8ad29e7ba3c034b4beb82ca
 	}
 }
