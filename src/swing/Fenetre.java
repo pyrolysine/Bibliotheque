@@ -1,5 +1,7 @@
 package swing;
 
+import model.Bibliotheque;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -83,9 +85,16 @@ public class Fenetre extends JFrame {
         Affichage.setName("Affichage");
         Affichage.setBackground(Color.red);
         Affichage.add(Retour());
-
         Affichage.add(new JTextArea("texte de test"));
+        return Affichage;
+    }
 
+    public JPanel AffichageAll(Bibliotheque bibliotheque){
+        JPanel Affichage=new JPanel();
+        Affichage.setName("Affichage");
+        Affichage.setBackground(Color.red);
+        Affichage.add(Retour());
+        Affichage.add(new JTextArea(bibliotheque.toString()));
         return Affichage;
     }
 
