@@ -17,11 +17,11 @@ public class Fenetre extends JFrame {
 
     public int width,height;
     public Bibliotheque bibliotheque = lectureDocument2("./src/Bibliotheque_test.csv");
-    String tampon = new String();
+    public  String tampon ="";
 
 
     public Fenetre(){
-
+        tampon=new String();
         width=400;
         height=400;
         NouvelleFenetre();
@@ -143,12 +143,9 @@ public class Fenetre extends JFrame {
         Affichage.setName("Affichage");
 
         Affichage.add(new prixLitteraire("prixLittéraire"));
-        Affichage.setBackground(Color.red);
-        Affichage.add(Retour());
-        Affichage.setLayout(new GridLayout(5, 1));
-        tampon += "test";
-        Affichage.add(new JTextArea(tampon));
 
+
+        Affichage.setLayout(new GridLayout(1, 1));
 
         return Affichage;
     }
@@ -257,26 +254,43 @@ public class Fenetre extends JFrame {
         public JLabel Label;
         public JTextField champ;
         public JButton bouton;
+        public JLabel  resultat;
 
         public  prixLitteraire(String Entrer)
         {Label=new JLabel(Entrer);
          champ=new JTextField();
             bouton=new JButton("valider");
+            resultat=new JLabel("");
+
             bouton.addActionListener(new valider());
-            add(Label);
-            add(champ);
-            add(bouton);
-            setLayout(new GridLayout(1, 3));
+
+            JLabel ligne=new JLabel();
+            ligne.setLayout(new GridLayout(1, 3));
+                    ligne.add(Label);
+                    ligne.add(champ);
+                    ligne.add(bouton);
+
+            setLayout(new GridLayout(3, 1));
+                add(ligne);
+                add(resultat);
+                add(Retour());
         }
 
         class valider implements ActionListener   {@Override   public void actionPerformed(ActionEvent e)
-        {
-            tampon = bibliotheque.rechercherParPrix(champ.getText()).toString();
+            {
+
+                if(Label.getText().equals("prixLittéraire"))
+                {
+                    tampon = bibliotheque.rechercherParPrix(champ.getText()).toString();
+                }
+                System.out.println(tampon);
+
+            }
 
         }
 
 
-        }
+
 
     }
 
@@ -294,9 +308,7 @@ public class Fenetre extends JFrame {
         {TypeConstruit=typeConstruit;
             setLayout(new GridLayout(3+titre.size(), 1));
             for(String ligne:titre)
-            {
-                form.add(new Formulaire(ligne,""));
-            }
+            { form.add(new Formulaire(ligne,"")); }
             bouton.addActionListener(new ListFormulaire.Valider());
 
             for(Formulaire ligne:form)
