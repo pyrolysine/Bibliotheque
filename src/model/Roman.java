@@ -17,7 +17,7 @@ public class Roman extends Livre {
 
 	public String getPrixLitteraire() {
 		switch (prixLitteraire){
-			case 1: return "GONCOURD";
+			case 1: return "GONCOURT";
 			case 2: return "MEDICIS";
 			case 3: return "INTERALLIE";
 			case 4: return "PUBLITER";
